@@ -4,6 +4,7 @@ namespace App\Console\Components\Twitter;
 
 use Illuminate\Console\Command;
 use App\Events\Twitter\Mentioned;
+use Spatie\TwitterStreamingApi\PublicStream;
 use Spatie\LaravelTwitterStreamingApi\TwitterStreamingApi;
 
 class ListenForMentions extends Command
@@ -16,15 +17,19 @@ class ListenForMentions extends Command
     {
         $this->info('Listening for mentions...');
 
-        app(TwitterStreamingApi::class)
-            ->publicStream()
+        PublicStream::create(
+            env('TWITTER_ACCESS_TOKEN'),
+            env('TWITTER_ACCESS_TOKEN_SECRET'),
+            env('TWITTER_CONSUMER_KEY'),
+            env('TWITTER_CONSUMER_SECRET')
+        )
             ->whenHears([
-                'spatie.be',
-                '@spatie_be',
-                'github.com/spatie',
-            ], function (array $tweetProperties) {
-                event(new Mentioned($tweetProperties));
-            })
-            ->startListening();
+                '#leasiunand',
+                '@LEASIUnand',
+                '@siunand'
+            ], function(array $tweet) {
+            event(new Mentioned($tweet));
+        })->startListening();
+
     }
 }

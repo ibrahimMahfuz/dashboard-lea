@@ -39,7 +39,7 @@ export default {
         },
         timeFormat: {
             type: String,
-            default: 'HH:mm',
+            default: 'HH:mm:ss',
         },
         timeZone: {
             type: String,

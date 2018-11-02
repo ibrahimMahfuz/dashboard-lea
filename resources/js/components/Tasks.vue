@@ -2,7 +2,7 @@
     <tile :position="position" modifiers="overflow">
         <section class="github-file">
             <h1 class="github-file__title">{{ teamMember }}</h1>
-            <div class="github-file__content" v-html="tasks"></div>
+            <h2 class="github-file__content" v-html="tasks"></h2>
         </section>
     </tile>
 </template>

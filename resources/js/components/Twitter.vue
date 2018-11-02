@@ -56,7 +56,7 @@ export default {
             displayingTopTweetSince: moment(),
             tweets: [],
             waitingLine: [],
-            ownScreenName: '@spatie_be',
+            ownScreenName: '@Ryudha_Alditya',
         };
     },
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Asisten;
 use Illuminate\Routing\Controller;
 use App\Services\TweetHistory\TweetHistory;
 
@@ -9,6 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $asistens = Asisten::findOrFail(1);
         return view('dashboard')->with([
             'pusherKey' => config('broadcasting.connections.pusher.key'),
 
@@ -17,6 +19,8 @@ class DashboardController extends Controller
             'initialTweets' => TweetHistory::all(),
 
             'usingNodeServer' => usingNodeServer(),
+
+            'asistens' => $asistens
         ]);
     }
 }

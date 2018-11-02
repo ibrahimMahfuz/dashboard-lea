@@ -14,6 +14,9 @@ import Tasks from './components/Tasks';
 import TimeWeather from './components/TimeWeather';
 import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
+import Announce from './components/Announce';
+import Piket from './components/Piket';
+import Regulation from './components/Regulation';
 
 new Vue({
     el: '#dashboard',
@@ -30,6 +33,9 @@ new Vue({
         TimeWeather,
         Twitter,
         Uptime,
+        Announce,
+        Piket,
+        Regulation,
     },
 
     created() {

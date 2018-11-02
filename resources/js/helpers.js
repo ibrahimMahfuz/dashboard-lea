@@ -101,3 +101,16 @@ function indexInAlphabet(character) {
     const index = character.toLowerCase().charCodeAt(0) - 96;
     return index < 1 ? 1 : index;
 }
+
+export function takeTime(value){
+    const date = moment(value);
+
+    return date.tz('Europe/Amsterdam').format('LT');
+}
+
+export function getNow(){
+    return moment().format('dddd');
+}
+
+
+
