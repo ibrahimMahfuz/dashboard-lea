@@ -29,7 +29,7 @@ import { getNow } from '../helpers';
      data() {
         return {
             hari : getNow(),
-            isim : ['ayam', 'daging', 'nasi','goreng','jembatan','lado hijau','kkn'],
+            isim : ['Ibrahim', 'Nazhifa', 'Annisa','Kia','Kelfin','Aldo','Indah'],
         };
     },
 
